@@ -1,0 +1,232 @@
+---
+title: "Concise Essay 1"
+author: "Shaila Ang"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- This file contains the detailed instructions for this Concise Essay. 
+     You will need to edit the contents of this file to produce your essay. 
+     Read through the instructions carefully to learn about how this will work.
+     Edit the document where the instructions indicate. 
+     Instructions and information, like this text, are in green. -->
+
+
+<!-- What is R Markdown?
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. 
+For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunks and plots in the html document. -->
+
+<!-- This assignment requires you to provide R code to produce a number of visualisations.
+     You need to add your code to this document, and Knit to produce an html file.  
+     You will submit the html file that is produced. Text like this, in green,
+     will not appear in the html file. -->
+     
+<!-- This document provides instructions for the assignment, and should be used to produce your assigment. -->
+
+
+# Acupuncture for headache
+A study by Vickers et al., published in the British Medical Journal in 2004, investigated  the use of acupuncture 
+for chronic headache in primary care in a large, randomised trial.  
+<!-- You can access the paper via readings online.
+     Read the paper in preparation for this assignment. -->
+The data from this study provides the basis for this concise essay.
+<!-- Make sure you have download the data file: acupuncture_for_headache.xlxs.
+     You should also download the Excel file with the data dictionary. -->
+
+<!-- Save the data file to your working directory.-->
+<!-- Set your working directory, using the menus. -->
+
+<!-- Once the file is in your working directory, and if you are unsure about how this all works, click the Knit button above, and see what happens. -->
+
+This essay provides visualisations of major outcomes considered by the study at 3 and 12 months.
+The outcomes of interest are headache severity score and headache frequency.
+
+# Treatments
+The study measured the effectiveness of acupuncture for chronic headache in primary care using two treatments labelled ‘usual care’ and ‘acupuncture group’. The eligible patients completed a baseline headache diary for four weeks and were randomised according to “use acupuncture” or “avoid acupuncture”. During a 3 month period, patients in the “use acupuncture” group received four acupuncture treatments per month from qualified professionals, and the acupuncture point prescriptions were unique to each person. This was in addition to the standard care from their GPs, whereas the “avoid acupuncture” group only received standard care and were never referred to acupuncture specialists.
+
+
+<!-- The following "chunk" of code will load the packages you need. -->
+<!-- This "chunk" of code starts with a line ```{r, echo=FALSE} 
+     and ends with the line ``` 
+     You put your code in between these lines, 
+     as shown by the "chunk" below which will load two packages you need. 
+     echo = FALSE means that the code will not appear in the html file.-->
+
+```{r, echo=FALSE}
+library(readxl)
+library(ggplot2)
+library(summarytools)
+library(tidyr)
+library(dplyr)
+library(forcats)
+library(janitor)
+
+```
+
+<!-- The next code chunk will read in the data file from your working directory. -->
+
+```{r, echo=FALSE}
+acupuncture_for_headache <- read_excel("acupuncture_for_headache.xlsx")
+View(acupuncture_for_headache)
+
+```
+
+# Age of participants
+The plot below shows a histogram of the age of the participants in the study.
+<!-- This code chunk is included to illustrate how to insert a graph into the html document.  
+     You will need to provide three graphs yourself in this essay. 
+     You can remove this code and graph from your essay if you wish. 
+     It is included here as an example. The use of echo=TRUE means that the
+     code will appear in your html file.-->
+```{r, echo=TRUE}
+plot1 <- ggplot(acupuncture_for_headache, aes(x = age)) + 
+      geom_histogram(binwidth=5)
+plot1
+```
+
+# Headache frequency at 3 months
+A daily diary was completed by patients over a four week period at three different stages of the study. The frequency was linked to the severity in a six-point Likert scale, where 5 equalled the most severe headache and 0 represented no headache at all. These were recorded 4 times per day, and this total provided an overall headache score. Additional health status questionnaires were also completed across the 12 month period at quarterly intervals, and after 12 months, patients were also asked to provide an estimate of headache severity on a different scale, which further provided indications of headache frequency in the cohort.
+
+<!-- Write code inside the code chunk below to create a graph that allows a comparison of headache frequency at 3 months in the two treatment groups. -->
+```{r, echo=TRUE}
+
+Theme1 <- theme(axis.title.x = element_text(size=12), 
+                axis.text.x  = element_text(size=12), 
+                axis.title.y = element_text(size=12), 
+                axis.text.y  = element_text(size=12), 
+                plot.title = element_text(size = 16),
+                strip.text = element_text(size = 12)) 
+
+graph1 <- ggplot(acupuncture_for_headache,aes(x=group,  y=as.numeric(f2))) +
+  geom_boxplot() +
+  labs(
+    x = "Treatment groups",
+    y = "Headache frequency at 3 months",
+    title = paste(
+      "Headache frequency for both treatment groups at 3 months"
+    )
+  ) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  Theme1
+graph1
+
+```
+
+Graph1 is a boxplot that shows the difference in headache frequency at three months for acupuncture and usual care groups. Overall, the acupuncture group experienced lower headache frequency compared to the usual care group. The median for the acupuncture group was also lower compared to the usual care group (acupuncture = 10; usual care = 13), while the interquartile range (IQR) for usual care was higher than the acupuncture group (acupuncture = 9; usual care = 11.50) (Refer to Appendix 1). Both graphs are positively skewed. However, a skew of 0.21 in usual care group suggests that it is approximately symmetric, whereas a skew of 0.67 for acupuncture group suggests that it is moderately symmetric (Refer to Appendix 1).
+
+# Headache severity at 12 months
+The headache severity was linked to the frequency and was recorded four times a day across a four week period to create a baseline, then at 3 months and 12 months after randomisation. The diary used a six-point Likert scale ranging from ‘no headache’ to ‘intense incapacitating’, which summed up to give the total headache score. Patients also completed the SF36 health status questionnaire at baseline, three months, and one year. Along with additional questionnaires throughout the study period, after 12 months patients also provided an estimate of their current and baseline headache severity on a scale of 1-10. 
+
+<!-- Write code inside the code chunk below to create a graph that allows a comparison of headache severity at 12 months in the two treatment groups. -->
+```{r, echo=TRUE}
+graph2 <- ggplot(acupuncture_for_headache,aes(x=group,  y=as.numeric(pk5))) +
+  geom_boxplot() +
+  labs(
+    x = "Treatment groups",
+    y = "Headache at 12 months",
+    title = paste(
+      "Headache severity for both treatment groups at 12 months"
+    )
+  ) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  Theme1
+graph2
+
+```
+
+Graph2 is a boxplot that shows the difference in headache severity at 12 months for acupuncture and usual care groups. In general, the acupuncture group experienced less severe headaches compared to the usual care group. The median for the acupuncture group was lower compared to the usual care (median: acupuncture = 12; usual care = 17), and the standard deviation for the acupuncture group was 13.72, which was also lower compared to the usual care group (17.06) (Refer to Appendix 1). Both graphs are highly skewed (Skewness: acupuncture = 1.76; usual care - 1.59) and have outliers, which needs further investigation.
+
+# The relationship between headache frequency at 12 months and baseline
+
+<!-- Write code inside the code chunk below to create a graph that shows the relationship between headache frequency at 12 months and at baseline, in the two treatment groups. -->
+```{r, echo=TRUE}
+Theme2 <- theme(axis.title.x = element_text(size=10), 
+                axis.text.x  = element_text(size=10), 
+                axis.title.y = element_text(size=8), 
+                axis.text.y  = element_text(size=8), 
+                plot.title = element_text(size = 10),
+                strip.text = element_text(size = 10)) 
+
+
+graph3 <- ggplot(acupuncture_for_headache, aes(x=as.numeric(f5), y = as.numeric(f1))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE)  +
+  facet_grid(cols=vars(group)) +
+  labs(
+    x="Headache frequency at 12 months", 
+    y = "Headache frequency at baseline", 
+    title = paste(
+    "Headache severity for both treatment groups at 12 months and baseline")) +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
+  Theme1
+graph3
+```
+
+Graph3 is a scatterplot with a regression line that shows the difference in headache frequency at 12 months and baseline. Generally, there are not many big differences with the results for  both groups. Both treatment groups have the same median (10), IQR (15), and are both highly skewed on the baseline (refer to Appendix3.2). At 12 months, the difference in minimum value and Q1 for both groups is 1, while the difference in IQR is 2, and maximum value is the same for both groups, which is 28 (refer to Appendix3.1). 
+
+Both graphs showed outliers, which needs further investigation to understand if acupuncture has a long-term effect on headache.
+
+Appendix
+
+Appendix 1
+
+```{r, echo=TRUE}
+
+Appendix1 <- acupuncture_for_headache %>%
+  group_by(group) %>%
+  summarize(f2)
+Appendix1
+
+descr(Appendix1)
+```
+
+Appendix 2
+
+```{r, echo=TRUE}
+
+Appendix2 <- acupuncture_for_headache %>%
+  group_by(group) %>%
+  summarize(pk5)
+Appendix2
+
+descr(Appendix2)
+```
+
+Appendix 3
+```{r, echo=TRUE}
+
+Appendix3.1 <- acupuncture_for_headache %>%
+  group_by(group) %>%
+  summarize(f5)
+Appendix3.1
+
+descr(Appendix3.1)
+
+```
+
+```{r, echo=TRUE}
+
+Appendix3.2 <- acupuncture_for_headache %>%
+  group_by(group) %>%
+  summarize(f1)
+Appendix3.2
+
+descr(Appendix3.2)
+
+
+```
+
+<!-- You can knit this document at any time to see the draft of your essay. -->
+
+<!-- When you have completed the essay, knit the document for the final time.
+     The html file will be in your working directory. -->

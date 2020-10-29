@@ -1,0 +1,627 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Concise Essay 1},
+  pdfauthor={Shaila Ang},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Concise Essay 1}
+\author{Shaila Ang}
+\date{30 October, 2020}
+
+\begin{document}
+\maketitle
+
+\hypertarget{acupuncture-for-headache}{%
+\section{Acupuncture for headache}\label{acupuncture-for-headache}}
+
+A study by Vickers et al., published in the British Medical Journal in
+2004, investigated the use of acupuncture for chronic headache in
+primary care in a large, randomised trial.\\
+The data from this study provides the basis for this concise essay.
+
+This essay provides visualisations of major outcomes considered by the
+study at 3 and 12 months. The outcomes of interest are headache severity
+score and headache frequency.
+
+\hypertarget{treatments}{%
+\section{Treatments}\label{treatments}}
+
+The study measured the effectiveness of acupuncture for chronic headache
+in primary care using two treatments labelled `usual care' and
+`acupuncture group'. The eligible patients completed a baseline headache
+diary for four weeks and were randomised according to ``use
+acupuncture'' or ``avoid acupuncture''. During a 3 month period,
+patients in the ``use acupuncture'' group received four acupuncture
+treatments per month from qualified professionals, and the acupuncture
+point prescriptions were unique to each person. This was in addition to
+the standard care from their GPs, whereas the ``avoid acupuncture''
+group only received standard care and were never referred to acupuncture
+specialists.
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'pryr':
+##   method      from
+##   print.bytes Rcpp
+\end{verbatim}
+
+\begin{verbatim}
+## For best results, restart R session and update pander using devtools:: or remotes::install_github('rapporter/pander')
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'janitor'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+\end{verbatim}
+
+\hypertarget{age-of-participants}{%
+\section{Age of participants}\label{age-of-participants}}
+
+The plot below shows a histogram of the age of the participants in the
+study.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot1 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(acupuncture_for_headache, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ age)) }\OperatorTok{+}\StringTok{ }
+\StringTok{      }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{binwidth=}\DecValTok{5}\NormalTok{)}
+\NormalTok{plot1}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Concise-Essay-1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{headache-frequency-at-3-months}{%
+\section{Headache frequency at 3
+months}\label{headache-frequency-at-3-months}}
+
+A daily diary was completed by patients over a four week period at three
+different stages of the study. The frequency was linked to the severity
+in a six-point Likert scale, where 5 equalled the most severe headache
+and 0 represented no headache at all. These were recorded 4 times per
+day, and this total provided an overall headache score. Additional
+health status questionnaires were also completed across the 12 month
+period at quarterly intervals, and after 12 months, patients were also
+asked to provide an estimate of headache severity on a different scale,
+which further provided indications of headache frequency in the cohort.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Theme1 <-}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{), }
+                \DataTypeTok{axis.text.x  =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{), }
+                \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{), }
+                \DataTypeTok{axis.text.y  =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{12}\NormalTok{), }
+                \DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{16}\NormalTok{),}
+                \DataTypeTok{strip.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{12}\NormalTok{)) }
+
+\NormalTok{graph1 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(acupuncture_for_headache,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{group,  }\DataTypeTok{y=}\KeywordTok{as.numeric}\NormalTok{(f2))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}
+    \DataTypeTok{x =} \StringTok{"Treatment groups"}\NormalTok{,}
+    \DataTypeTok{y =} \StringTok{"Headache frequency at 3 months"}\NormalTok{,}
+    \DataTypeTok{title =} \KeywordTok{paste}\NormalTok{(}
+      \StringTok{"Headache frequency for both treatment groups at 3 months"}
+\NormalTok{    )}
+\NormalTok{  ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =}\NormalTok{ scales}\OperatorTok{::}\KeywordTok{pretty_breaks}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\NormalTok{Theme1}
+\NormalTok{graph1}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Concise-Essay-1_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+Graph1 is a boxplot that shows the difference in headache frequency at
+three months for acupuncture and usual care groups. Overall, the
+acupuncture group experienced lower headache frequency compared to the
+usual care group. The median for the acupuncture group was also lower
+compared to the usual care group (acupuncture = 10; usual care = 13),
+while the interquartile range (IQR) for usual care was higher than the
+acupuncture group (acupuncture = 9; usual care = 11.50) (Refer to
+Appendix 1). Both graphs are positively skewed. However, a skew of 0.21
+in usual care group suggests that it is approximately symmetric, whereas
+a skew of 0.67 for acupuncture group suggests that it is moderately
+symmetric (Refer to Appendix 1).
+
+\hypertarget{headache-severity-at-12-months}{%
+\section{Headache severity at 12
+months}\label{headache-severity-at-12-months}}
+
+The headache severity was linked to the frequency and was recorded four
+times a day across a four week period to create a baseline, then at 3
+months and 12 months after randomisation. The diary used a six-point
+Likert scale ranging from `no headache' to `intense incapacitating',
+which summed up to give the total headache score. Patients also
+completed the SF36 health status questionnaire at baseline, three
+months, and one year. Along with additional questionnaires throughout
+the study period, after 12 months patients also provided an estimate of
+their current and baseline headache severity on a scale of 1-10.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{graph2 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(acupuncture_for_headache,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{group,  }\DataTypeTok{y=}\KeywordTok{as.numeric}\NormalTok{(pk5))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}
+    \DataTypeTok{x =} \StringTok{"Treatment groups"}\NormalTok{,}
+    \DataTypeTok{y =} \StringTok{"Headache at 12 months"}\NormalTok{,}
+    \DataTypeTok{title =} \KeywordTok{paste}\NormalTok{(}
+      \StringTok{"Headache severity for both treatment groups at 12 months"}
+\NormalTok{    )}
+\NormalTok{  ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =}\NormalTok{ scales}\OperatorTok{::}\KeywordTok{pretty_breaks}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\NormalTok{Theme1}
+\NormalTok{graph2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Concise-Essay-1_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+Graph2 is a boxplot that shows the difference in headache severity at 12
+months for acupuncture and usual care groups. In general, the
+acupuncture group experienced less severe headaches compared to the
+usual care group. The median for the acupuncture group was lower
+compared to the usual care (median: acupuncture = 12; usual care = 17),
+and the standard deviation for the acupuncture group was 13.72, which
+was also lower compared to the usual care group (17.06) (Refer to
+Appendix 1). Both graphs are highly skewed (Skewness: acupuncture =
+1.76; usual care - 1.59) and have outliers, which needs further
+investigation.
+
+\hypertarget{the-relationship-between-headache-frequency-at-12-months-and-baseline}{%
+\section{The relationship between headache frequency at 12 months and
+baseline}\label{the-relationship-between-headache-frequency-at-12-months-and-baseline}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Theme2 <-}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{10}\NormalTok{), }
+                \DataTypeTok{axis.text.x  =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{10}\NormalTok{), }
+                \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{8}\NormalTok{), }
+                \DataTypeTok{axis.text.y  =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{8}\NormalTok{), }
+                \DataTypeTok{plot.title =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{),}
+                \DataTypeTok{strip.text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{)) }
+
+
+\NormalTok{graph3 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(acupuncture_for_headache, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{as.numeric}\NormalTok{(f5), }\DataTypeTok{y =} \KeywordTok{as.numeric}\NormalTok{(f1))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{, }\DataTypeTok{se =} \OtherTok{TRUE}\NormalTok{)  }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_grid}\NormalTok{(}\DataTypeTok{cols=}\KeywordTok{vars}\NormalTok{(group)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}
+    \DataTypeTok{x=}\StringTok{"Headache frequency at 12 months"}\NormalTok{, }
+    \DataTypeTok{y =} \StringTok{"Headache frequency at baseline"}\NormalTok{, }
+    \DataTypeTok{title =} \KeywordTok{paste}\NormalTok{(}
+    \StringTok{"Headache severity for both treatment groups at 12 months and baseline"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{breaks =}\NormalTok{ scales}\OperatorTok{::}\KeywordTok{pretty_breaks}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =}\NormalTok{ scales}\OperatorTok{::}\KeywordTok{pretty_breaks}\NormalTok{(}\DataTypeTok{n =} \DecValTok{10}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\NormalTok{Theme1}
+\NormalTok{graph3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{Concise-Essay-1_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Graph3 is a scatterplot with a regression line that shows the difference
+in headache frequency at 12 months and baseline. Generally, there are
+not many big differences with the results for both groups. Both
+treatment groups have the same median (10), IQR (15), and are both
+highly skewed on the baseline (refer to Appendix3.2). At 12 months, the
+difference in minimum value and Q1 for both groups is 1, while the
+difference in IQR is 2, and maximum value is the same for both groups,
+which is 28 (refer to Appendix3.1).
+
+Both graphs showed outliers, which needs further investigation to
+understand if acupuncture has a long-term effect on headache.
+
+Appendix
+
+Appendix 1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix1 <-}\StringTok{ }\NormalTok{acupuncture_for_headache }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(group) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(f2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` regrouping output by 'group' (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 301 x 2
+## # Groups:   group [2]
+##    group          f2
+##    <chr>       <dbl>
+##  1 acupuncture     8
+##  2 acupuncture    24
+##  3 acupuncture    11
+##  4 acupuncture     2
+##  5 acupuncture    10
+##  6 acupuncture     8
+##  7 acupuncture     3
+##  8 acupuncture     9
+##  9 acupuncture     8
+## 10 acupuncture    23
+## # ... with 291 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descr}\NormalTok{(Appendix1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `funs()` is deprecated as of dplyr 0.8.0.
+## Please use a list of either functions or lambdas: 
+## 
+##   # Simple named list: 
+##   list(mean = mean, median = median)
+## 
+##   # Auto named with `tibble::lst()`: 
+##   tibble::lst(mean, median)
+## 
+##   # Using lambdas
+##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.
+\end{verbatim}
+
+\begin{verbatim}
+## Descriptive Statistics  
+## f2 by group  
+## Data Frame: Appendix1  
+## N: 161  
+## 
+##                     group = acupuncture   group = usual care
+## ----------------- --------------------- --------------------
+##              Mean                 11.96                13.94
+##           Std.Dev                  7.32                 7.60
+##               Min                  0.00                 0.00
+##                Q1                  7.00                 8.00
+##            Median                 10.00                13.00
+##                Q3                 16.00                19.50
+##               Max                 28.00                28.00
+##               MAD                  7.41                 8.15
+##               IQR                  9.00                11.25
+##                CV                  0.61                 0.55
+##          Skewness                  0.67                 0.20
+##       SE.Skewness                  0.19                 0.20
+##          Kurtosis                 -0.43                -0.82
+##           N.Valid                161.00               140.00
+##         Pct.Valid                100.00               100.00
+\end{verbatim}
+
+Appendix 2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix2 <-}\StringTok{ }\NormalTok{acupuncture_for_headache }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(group) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(pk5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` regrouping output by 'group' (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 301 x 2
+## # Groups:   group [2]
+##    group         pk5
+##    <chr>       <dbl>
+##  1 acupuncture  6.25
+##  2 acupuncture 51.2 
+##  3 acupuncture 25.2 
+##  4 acupuncture  1   
+##  5 acupuncture  2.5 
+##  6 acupuncture 13.5 
+##  7 acupuncture  2.75
+##  8 acupuncture 19.5 
+##  9 acupuncture 21.5 
+## 10 acupuncture 38   
+## # ... with 291 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descr}\NormalTok{(Appendix2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Descriptive Statistics  
+## pk5 by group  
+## Data Frame: Appendix2  
+## N: 161  
+## 
+##                     group = acupuncture   group = usual care
+## ----------------- --------------------- --------------------
+##              Mean                 16.25                22.34
+##           Std.Dev                 13.72                17.01
+##               Min                  0.00                 0.25
+##                Q1                  7.25                10.38
+##            Median                 12.00                17.00
+##                Q3                 21.50                28.75
+##               Max                 73.73                87.25
+##               MAD                  8.52                12.97
+##               IQR                 14.25                18.31
+##                CV                  0.84                 0.76
+##          Skewness                  1.76                 1.60
+##       SE.Skewness                  0.19                 0.20
+##          Kurtosis                  3.46                 2.63
+##           N.Valid                161.00               140.00
+##         Pct.Valid                100.00               100.00
+\end{verbatim}
+
+Appendix 3
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix3}\FloatTok{.1}\NormalTok{ <-}\StringTok{ }\NormalTok{acupuncture_for_headache }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(group) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(f5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` regrouping output by 'group' (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix3}\FloatTok{.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 301 x 2
+## # Groups:   group [2]
+##    group          f5
+##    <chr>       <dbl>
+##  1 acupuncture    13
+##  2 acupuncture    27
+##  3 acupuncture    13
+##  4 acupuncture     2
+##  5 acupuncture     2
+##  6 acupuncture     9
+##  7 acupuncture     1
+##  8 acupuncture    12
+##  9 acupuncture    10
+## 10 acupuncture    22
+## # ... with 291 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descr}\NormalTok{(Appendix3}\FloatTok{.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Descriptive Statistics  
+## f5 by group  
+## Data Frame: Appendix3.1  
+## N: 161  
+## 
+##                     group = acupuncture   group = usual care
+## ----------------- --------------------- --------------------
+##              Mean                 11.38                13.61
+##           Std.Dev                  7.47                 7.46
+##               Min                  0.00                 1.00
+##                Q1                  6.00                 7.00
+##            Median                  9.00                12.00
+##                Q3                 15.00                18.00
+##               Max                 28.00                28.00
+##               MAD                  5.93                 7.41
+##               IQR                  9.00                11.00
+##                CV                  0.66                 0.55
+##          Skewness                  0.91                 0.51
+##       SE.Skewness                  0.19                 0.20
+##          Kurtosis                 -0.06                -0.73
+##           N.Valid                161.00               140.00
+##         Pct.Valid                100.00               100.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix3}\FloatTok{.2}\NormalTok{ <-}\StringTok{ }\NormalTok{acupuncture_for_headache }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(group) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(f1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` regrouping output by 'group' (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Appendix3}\FloatTok{.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 301 x 2
+## # Groups:   group [2]
+##    group          f1
+##    <chr>       <dbl>
+##  1 acupuncture    15
+##  2 acupuncture    25
+##  3 acupuncture    14
+##  4 acupuncture    11
+##  5 acupuncture     6
+##  6 acupuncture     8
+##  7 acupuncture     9
+##  8 acupuncture    25
+##  9 acupuncture     9
+## 10 acupuncture    25
+## # ... with 291 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{descr}\NormalTok{(Appendix3}\FloatTok{.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Descriptive Statistics  
+## f1 by group  
+## Data Frame: Appendix3.2  
+## N: 161  
+## 
+##                     group = acupuncture   group = usual care
+## ----------------- --------------------- --------------------
+##              Mean                 15.63                16.15
+##           Std.Dev                  6.59                 6.70
+##               Min                  3.00                 4.00
+##                Q1                 10.00                11.00
+##            Median                 15.00                15.00
+##                Q3                 20.00                21.00
+##               Max                 28.00                28.00
+##               MAD                  7.41                 7.41
+##               IQR                 10.00                10.00
+##                CV                  0.42                 0.41
+##          Skewness                  0.47                 0.33
+##       SE.Skewness                  0.19                 0.20
+##          Kurtosis                 -0.81                -0.93
+##           N.Valid                161.00               140.00
+##         Pct.Valid                100.00               100.00
+\end{verbatim}
+
+\end{document}
